@@ -11,10 +11,14 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <p>Wikipedia Viewer [Version 1.0.00001]<br>
+    <span>Wikipedia Viewer [Version 1.0.00001]<br>
     (c) 2017 Constantine Melios. No rights reserved.<br><br>
     Input search term or press Return↩ for random wiki. <br>
-    </p>
+    </span>
+    <button id="random">Return↩</button>
     <form>https://wiki/><input type="text" id="search" onblur="this.focus()" autofocus></form>
+    <button class="nav" id="prevBut"><- Previous</button>
+    <div id="main"></div>
+    <button class="nav" id="moreBut">More--></button>
 </body>
 </html>
