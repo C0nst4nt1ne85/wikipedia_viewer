@@ -37,7 +37,7 @@ function wikipedia(search, place){
 $(document).ready(function () {
 var place = 0;
 var searchTerm ="";
-
+//input
     $("#search").keydown(function(input) {
         if (input.keyCode == 13){
             searchTerm = $("#search").val();
@@ -52,7 +52,7 @@ var searchTerm ="";
         }
 
     })
-
+//buttons
     $("#random").click(function(){
         random();
     })
