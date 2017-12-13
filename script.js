@@ -11,10 +11,13 @@ function wikipedia(search, place){
     }).done(function (data) {
         var html = "";
         //display nav
-        $("#moreBut").css("display", "inline-block");
+        
         if (place == 0) {
             $("#prevBut").css("display", "none");
+        } else if (place == 50;){
+        $("#moreBut").css("display", "none");
         } else {
+            $("#moreBut").css("display", "inline-block");
             $("#prevBut").css("display", "inline-block");
         }
         //display data
