@@ -7,7 +7,7 @@ function random(){
 function wikipedia(search, place){
     //retreive data
     $.ajax({
-        url: `http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrsearch=${search}&gsrlimit=50&prop=extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&formatversion=2&origin=*`
+        url: `https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrsearch=${search}&gsrlimit=50&prop=extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&formatversion=2&origin=*`
     }).done(function (data) {
         var html = "";
         //display nav
