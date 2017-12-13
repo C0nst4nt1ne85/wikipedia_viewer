@@ -5,20 +5,21 @@ function random(){
 
 //search and display content and nav
 function wikipedia(search, place){
-    //retrieve data
+    //retreive data
     $.ajax({
-        url: `https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrsearch=${search}&gsrlimit=50&prop=extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&formatversion=2&origin=*`
+        url: `http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrsearch=${search}&gsrlimit=50&prop=extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&formatversion=2&origin=*`
     }).done(function (data) {
         var html = "";
         //display nav
         
         if (place == 0) {
             $("#prevBut").css("display", "none");
-        } else if (place == 50;){
-        $("#moreBut").css("display", "none");
-        } else {
             $("#moreBut").css("display", "inline-block");
+        } else if (place == 40) {
+            $("#moreBut").css("display", "none");
+        } else {
             $("#prevBut").css("display", "inline-block");
+            $("#moreBut").css("display", "inline-block");
         }
         //display data
         for (var i = place; i - place < 10; i++) {
@@ -37,7 +38,6 @@ $(document).ready(function () {
 var place = 0;
 var searchTerm ="";
 
-//input
     $("#search").keydown(function(input) {
         if (input.keyCode == 13){
             searchTerm = $("#search").val();
@@ -48,11 +48,11 @@ var searchTerm ="";
             } else {
                 wikipedia(searchTerm, place);
             }
-            searchTerm = searchTerm;
+            searchTerm = searchTerm
         }
 
     })
-//buttons
+
     $("#random").click(function(){
         random();
     })
